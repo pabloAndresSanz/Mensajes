@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ChatView: View {
-    @ObservedObject var delegate = XMPPDelegate(jid: "<USER ID>", password: "<USER PASSWORD>", buddyJid: "<BUDDY ID>" )
+    @ObservedObject var delegate = XMPPDelegate(jid: "<USER  ID>", password: "<USER PASSWORD>", buddyJid: "<BUDDY ID>" )
     
     var body: some View {
         return (
