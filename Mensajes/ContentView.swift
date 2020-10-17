@@ -7,15 +7,30 @@
 //
 
 import SwiftUI
+import XMPPFramework
 
-struct ContentView: View {
+struct ContentView: View  {
+    @State var mensaje: String = ""
+    
     var body: some View {
-        Text("Hello, World!")
+        let message = MessageView()
+        return VStack {
+            message
+            HStack {
+                TextField("Mensaje", text: $mensaje)
+                Button(action: {
+                    message.controller.sendMessage(message: self.mensaje)
+                }) {
+                    Image(systemName: "person.circle")
+                }
+            }
+        }
     }
 }
 
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        return ContentView()
     }
 }
